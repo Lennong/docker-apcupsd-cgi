@@ -1,5 +1,5 @@
-# APC UPS Power Management Web Interface (from debian:latest, fcgiwrap, apcupsd-cgi)
-FROM debian:latest 
+# APC UPS Power Management Web Interface (from bitnami/minideb:bullseye, fcgiwrap, apcupsd-cgi)
+FROM bitnami/minideb:bullseye 
 # FROM debian:buster
 
 # update
