@@ -13,7 +13,7 @@ As explained, the container exposes port 80, if as I think port 80 on your host 
 
 To run docker container:
 ```
-docker run -d -p 3552:80 -restart=unless-stopped --name apcupsd-cgi bnhf/apcupsd-cgi
+docker run -d -p 3552:80 -restart=unless-stopped --name apcupsd-cgi lennong05/apcupsd-cgi
 ```
 If you use Portainer Stacks:
 ```yml
