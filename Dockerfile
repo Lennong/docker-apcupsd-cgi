@@ -1,6 +1,5 @@
 # APC UPS Power Management Web Interface (from bitnami/minideb:bullseye, fcgiwrap, apcupsd-cgi)
-FROM bitnami/minideb:bullseye 
-# FROM debian:buster
+FROM bitnami/minideb:bullseye
 
 # update
 RUN apt-get -y update && apt-get -y upgrade
@@ -9,7 +8,7 @@ RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get -y install nginx-light apcupsd-cgi fcgiwrap
 
 ADD apcupsd-hosts.conf /etc/apcupsd/hosts.conf
-ADD apcupsd.css /etc/apcupsd/apcupsd.css
+COPY apcupsd.css /etc/apcupsd/apcupsd.css
 ADD startup.sh /opt/startup.sh
 ADD nginx.conf /etc/nginx/nginx.conf
 
