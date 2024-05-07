@@ -8,8 +8,8 @@ RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get -y install nginx-light apcupsd-cgi fcgiwrap
 
 ADD apcupsd-hosts.conf /etc/apcupsd/hosts.conf
-ADD /config/multimon.conf /etc/apcupsd/multimon.conf
-ADD /config/apcupsd.css /etc/apcupsd/apcupsd.css
+ADD /config/multimon.conf /opt/multimon.conf
+ADD /config/apcupsd.css /opt/apcupsd.css
 ADD startup.sh /opt/startup.sh
 ADD nginx.conf /etc/nginx/nginx.conf
 
