@@ -13,7 +13,7 @@ NAMES=( $UPSNAMES )
 for ((i=0;i<${#HOSTS[@]};i++))
     do
         echo "MONITOR ${HOSTS[$i]} \"${NAMES[$i]}\"" >> /etc/apcupsd/hosts.conf
-done
+    done
 fi
 
 # start fcgiwrap
