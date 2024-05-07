@@ -3,6 +3,10 @@
 # remove sample and create empty hosts file
 rm /etc/apcupsd/hosts.conf && touch /etc/apcupsd/hosts.conf
 
+# copy config files
+cp /opt/multimon.conf /etc/apcupsd/multimon.conf
+cp /opt/apcupsd.css /etc/apcupsd/apcupsd.css
+
 # populate two arrays with host and UPS names
 HOSTS=( $UPSHOSTS )
 NAMES=( $UPSNAMES )
@@ -13,12 +17,6 @@ for ((i=0;i<${#HOSTS[@]};i++))
         echo "MONITOR ${HOSTS[$i]} \"${NAMES[$i]}\"" >> /etc/apcupsd/hosts.conf
         echo "MONITOR ${HOSTS[$i]} \"${NAMES[$i]}\""
 done
-        
-# print host IP
-# hostIp=$(/sbin/ip route|awk '/default/ { print $3 }')
-
-# change the IP to monitor with the host IP in /etc/apcupsd/hosts.conf
-# sed -i 's/MONITOR 127.0.0.1/MONITOR \"$hostIp\"/g' /etc/apcupsd/hosts.conf
 
 # start fcgiwrap
 /etc/init.d/fcgiwrap start
