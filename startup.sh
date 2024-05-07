@@ -13,7 +13,6 @@ NAMES=( $UPSNAMES )
 for ((i=0;i<${#HOSTS[@]};i++))
     do
         echo "MONITOR ${HOSTS[$i]} \"${NAMES[$i]}\"" >> /etc/apcupsd/hosts.conf
-        echo "MONITOR ${HOSTS[$i]} \"${NAMES[$i]}\""
 done
 fi
 
