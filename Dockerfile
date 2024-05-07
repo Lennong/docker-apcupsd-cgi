@@ -1,5 +1,5 @@
 # APC UPS Power Management Web Interface (from bitnami/minideb:bullseye, fcgiwrap, apcupsd-cgi)
-FROM bitnami/minideb:bookworm
+FROM bitnami/minideb:bullseye
 
 # update
 RUN apt-get -y update && apt-get -y upgrade
