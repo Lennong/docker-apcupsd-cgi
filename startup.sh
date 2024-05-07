@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# remove sample and create empty hosts file
-#rm /etc/apcupsd/hosts.conf && touch /etc/apcupsd/hosts.conf
-
 # copy config files if not already exists/configured
 cp -n /opt/hosts.conf /etc/apcupsd/hosts.conf
 cp -n /opt/multimon.conf /etc/apcupsd/multimon.conf
