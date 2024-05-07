@@ -28,6 +28,8 @@ services:
         - UPSHOSTS=${UPSHOSTS} # Ordered list of hostnames or IP addresses of UPS connected computers (space separated, no quotes)
         - UPSNAMES=${UPSNAMES} # Matching ordered list of location names to display on status page (space separated, no quotes)
         - TZ=${TZ} # Timezone to use for status page -- UTC is the default
+      volumes:
+        - /path/to/config:/etc/apcupsd
       restart: unless-stopped
 ```
 Environment variables required for the above (or hardcode values into compose):
